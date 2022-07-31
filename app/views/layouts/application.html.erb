@@ -10,6 +10,7 @@
   </head>
 
   <body>
+    <%= render partial: 'layouts/alert' if flash.keys.any? %>
     <%= yield %>
   </body>
 </html>
