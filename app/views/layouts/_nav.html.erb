@@ -1,0 +1,14 @@
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+  <ul class="nav col-12 col-lg-auto me-lg-auto">
+    <li><%= link_to 'Library', books_url, class: 'nav-link px-2 link-dark' %></li>
+    <li><%= link_to 'Rents', rents_url, class: 'nav-link px-2 link-dark' %></li>
+  </ul>
+  <div class="login-links">
+    <% if current_user %>
+      <%= button_to 'Log out', destroy_user_session_path, class: 'dropdown-item', method: :delete %>
+    <% else %>
+      <%= link_to 'Log in', new_user_session_path, class: 'btn btn-outline-primary btn-sm me-2' %>
+      <%= link_to 'Sign up', new_user_registration_path, class: 'btn btn-primary btn-sm' %>
+    <% end %>
+  </div>
+</nav>
