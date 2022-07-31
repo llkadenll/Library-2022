@@ -57,6 +57,21 @@ class RentsController < ApplicationController
     end
   end
 
+  def rent
+    @book = Book.find(params[:id])
+
+    if @book.rented?
+      redirect_to books_url, alert: "The book is already rented."
+      return
+    end
+
+    @book.rented!
+    @rent = Rent.create(user: current_user, book: @book)
+    redirect_to books_url, notice: "Book was successfully rented."
+  end
+
+  
+
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_rent
