@@ -1,17 +1,19 @@
 <div id="<%= dom_id rent %>">
   <p>
-    <strong>User:</strong>
-    <%= rent.user_id %>
+    <strong>Author:</strong>
+    <%= rent.book.author %>
   </p>
 
   <p>
-    <strong>Book:</strong>
-    <%= rent.book_id %>
+    <strong>Title:</strong>
+    <%= rent.book.title %>
   </p>
 
   <p>
-    <strong>Status:</strong>
+    <strong>Rent status:</strong>
     <%= rent.status %>
   </p>
+
+  <%= button_to("Return this book", return_book_path(rent), method: :patch) if rent.ongoing? %>
 
 </div>

@@ -2,7 +2,7 @@ Rails.application.routes.draw do
   root "books#index"
 
   resources :books
-  resources :rents
+  resources :rents, only: [ :index ]
   devise_for :users
 
   patch '/rents/:id/rent', to: 'rents#rent', as: 'rent_book'
