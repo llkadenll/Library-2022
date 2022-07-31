@@ -9,6 +9,6 @@
   <%= link_to "Edit this book", edit_book_path(@book) %> |
   <%= link_to "Back to books", books_path %>
 
-  <%= button_to "Rent this book", rent_book_path(@book), method: :patch %>
+  <%= button_to("Rent this book", rent_book_path(@book), method: :patch) if @book.available? %>
   <%= button_to "Destroy this book", @book, method: :delete %>
 </div>
