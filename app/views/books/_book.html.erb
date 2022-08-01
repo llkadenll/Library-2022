@@ -1,17 +1,13 @@
-<div id="<%= dom_id book %>">
-  <p>
-    <strong>Author:</strong>
-    <%= book.author %>
-  </p>
+<div class="card">
 
-  <p>
-    <strong>Title:</strong>
-    <%= book.title %>
-  </p>
-
-  <p>
-    <strong>Status:</strong>
+  <div class="card-header">
     <%= book.status %>
-  </p>
+  </div>
 
+  <div class="card-body">
+    <h5 class="card-title"><%= book.title %></h5>
+    <p class="card-text"><%= book.author %></p>
+    <%= button_to("Rent this book", rent_book_path(book), method: :patch, class: 'btn btn-primary') if book.available? %>
+    <%= link_to "Show", book, class: 'card-link' %>
+  </div>
 </div>

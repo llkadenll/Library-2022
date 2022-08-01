@@ -1,12 +1,9 @@
-<h1>Books</h1>
+<h1>Library</h1>
+
+<%= link_to "New book", new_book_path %>
 
 <div id="books">
   <% @books.each do |book| %>
     <%= render book %>
-    <p>
-      <%= link_to "Show this book", book %>
-    </p>
   <% end %>
 </div>
-
-<%= link_to "New book", new_book_path %>
