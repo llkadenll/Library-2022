@@ -4,7 +4,7 @@ git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 ruby "3.1.1"
 
 gem 'devise'
-gem 'bootstrap', '~> 5.1.3'
+gem 'bootstrap', '~> 5.2.0'
 
 group :development, :test do
   gem 'rspec-rails', '~> 5.0.0'
