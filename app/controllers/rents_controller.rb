@@ -1,4 +1,5 @@
 class RentsController < ApplicationController
+  before_action :authenticate_user!, only: %i[ index ]
   before_action :set_rent, only: %i[ return ]
 
   # GET /rents or /rents.json
