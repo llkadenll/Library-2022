@@ -12,6 +12,8 @@
   <body>
     <%= render partial: 'layouts/nav' %>
     <%= render partial: 'layouts/alert' if flash.keys.any? %>
-    <%= yield %>
+    <div id="main-container">
+      <%= yield %>
+    </div>
   </body>
 </html>

@@ -1,4 +1,13 @@
 @import "bootstrap";
+@import "books";
+@import "rents";
+
+#main-container {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
 
 .login-links {
   margin-right: 8px;

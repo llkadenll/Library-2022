@@ -1,19 +1,13 @@
-<div id="<%= dom_id rent %>">
-  <p>
-    <strong>Author:</strong>
-    <%= rent.book.author %>
-  </p>
+<div class="card rent-card">
 
-  <p>
-    <strong>Title:</strong>
-    <%= rent.book.title %>
-  </p>
-
-  <p>
-    <strong>Rent status:</strong>
+  <div class="card-header">
     <%= rent.status %>
-  </p>
+  </div>
 
-  <%= button_to("Return this book", return_book_path(rent), method: :patch) if rent.ongoing? %>
+  <div class="card-body">
+    <h5 class="card-title"><%= rent.book.title %></h5>
+    <p class="card-text"><%= rent.book.author %></p>
+    <%= button_to("Return this book", return_book_path(rent), method: :patch, class: 'btn btn-primary') if rent.ongoing? %>
+  </div>
 
 </div>

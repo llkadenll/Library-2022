@@ -1,0 +1,32 @@
+#books {
+  margin-top: 15px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 15px;
+  width: 70%;
+}
+
+.book-card {
+  width: 300px;
+}
+
+.book-title {
+  margin-bottom: 2px;
+}
+
+.book-body {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.book-card-links {
+  display: flex;
+  gap: 7px;
+  align-items: center;
+  margin-block: 10px;
+}
+
+.show-book {
+  width: 70%;
+}
