@@ -9,6 +9,7 @@ gem 'bootstrap', '~> 5.1.3'
 group :development, :test do
   gem 'rspec-rails', '~> 5.0.0'
   gem 'factory_bot_rails'
+  gem 'shoulda-matchers', '~> 5.0'
 end
 
 # Bundle edge Rails instead: gem "rails", github: "rails/rails", branch: "main"
