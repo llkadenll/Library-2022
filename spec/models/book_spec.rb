@@ -13,8 +13,4 @@ RSpec.describe Book, type: :model do
     it { should validate_length_of(:title).is_at_most(80) }
   end
 
-  describe 'enums' do
-    it { should define_enum_for(:status).with_values(available: 0, rented: 1) }
-  end
-
 end

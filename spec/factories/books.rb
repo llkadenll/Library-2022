@@ -3,6 +3,5 @@ FactoryBot.define do
     author { "MyString" }
     title { "MyString" }
     description { "MyText" }
-    status { :available }
   end
 end

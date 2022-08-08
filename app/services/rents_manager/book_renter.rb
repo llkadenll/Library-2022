@@ -6,13 +6,12 @@ module RentsManager
     end
 
     def call
-      if @book.rented?
+      if @book.rents.last.ongoing?
         return false
       end
 
-      @book.rented!
-      rented_book = Rent.new(user: @renter, book: @book)
-      return rented_book.save
+      rent = Rent.new(user: @renter, book: @book)
+      return rent.save
     end
   end
 end

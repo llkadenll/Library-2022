@@ -4,8 +4,8 @@ RSpec.describe "Books", type: :request do
   let(:user) { build(:user) }
   let(:book) { create(:book) }
 
-  let(:valid_params) { { book: { author: 'author', title: 'title', status: 'available' } } }
-  let(:invalid_params) { { book: { author: '', title: '', status: 'available' } } }
+  let(:valid_params) { { book: { author: 'author', title: 'title' } } }
+  let(:invalid_params) { { book: { author: '', title: '' } } }
 
   describe "GET /index" do
     it "returns http success" do

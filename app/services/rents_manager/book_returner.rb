@@ -9,8 +9,6 @@ module RentsManager
         return false
       end
       
-      @book = @rent.book
-      @book.available!
       @rent.ended!
       return true
     end
