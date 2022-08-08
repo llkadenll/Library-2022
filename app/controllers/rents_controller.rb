@@ -1,5 +1,5 @@
 class RentsController < ApplicationController
-  before_action :authenticate_user!, only: %i[ index rent return ]
+  before_action :authenticate_user!, only: %i[ index create ]
   before_action :set_rent, only: %i[ return ]
 
   # GET /rents or /rents.json
@@ -7,17 +7,15 @@ class RentsController < ApplicationController
     @rents = Rent.where(user: current_user).order(updated_at: :desc)
   end
 
-  def rent
-    @book = Book.find(params[:id])
+  def create
+    @book = Book.find(params[:book_id])
+    book_rented = BookRenter.call(@book, current_user)
 
-    if @book.rented?
-      redirect_to books_url, alert: "The book is already rented."
-      return
+    if book_rented
+      redirect_to books_url, notice: "Book was successfully rented."
+    else
+      redirect_to books_url, alert: "You cannot rent this book."
     end
-
-    @book.rented!
-    @rent = Rent.create(user: current_user, book: @book)
-    redirect_to books_url, notice: "Book was successfully rented."
   end
 
   def return
@@ -38,10 +36,5 @@ class RentsController < ApplicationController
     # Use callbacks to share common setup or constraints between actions.
     def set_rent
       @rent = Rent.where(user: current_user).find(params[:id])
-    end
-
-    # Only allow a list of trusted parameters through.
-    def rent_params
-      params.require(:rent).permit(:user_id, :book_id, :status)
     end
 end
