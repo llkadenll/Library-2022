@@ -4,7 +4,7 @@ class RentsController < ApplicationController
 
   # GET /rents or /rents.json
   def index
-    @rents = Rent.where(user: current_user).order(updated_at: :desc)
+    @rents = Rent.where(user: current_user).order(:status, updated_at: :desc)
   end
 
   def create
