@@ -1,7 +1,7 @@
 <div class="card show-book">
   <div class="card-body">
     <div class="book-card-links">
-      <%= button_to("Rent this book", rent_book_path(@book), method: :patch, class: 'btn btn-primary') if @book.available? %>
+      <%= rent_button(@book) %>
       <%= link_to "Edit this book", edit_book_path(@book) %>
     </div>
 
