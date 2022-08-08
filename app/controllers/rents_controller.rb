@@ -9,7 +9,7 @@ class RentsController < ApplicationController
 
   def create
     @book = Book.find(params[:book_id])
-    book_rented = BookRenter.call(@book, current_user)
+    book_rented = RentsManager::BookRenter.call(@book, current_user)
 
     if book_rented
       redirect_to books_url, notice: "Book was successfully rented."
@@ -19,17 +19,13 @@ class RentsController < ApplicationController
   end
 
   def return
-    if @rent.ended?
-      redirect_to rents_url, alert: "The book is already returned."
-      return
+    book_returned = RentsManager::BookReturner.call(@rent)
+
+    if book_returned
+      redirect_to rents_url, notice: "Book was successfully returned."
+    else
+      redirect_to rents_url, alert: "You cannot return this book."
     end
-
-    @book = @rent.book
-
-    @book.available!
-    @rent.ended!
-
-    redirect_to rents_url, notice: "Book was successfully returned."
   end
 
   private
