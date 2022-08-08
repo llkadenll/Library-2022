@@ -1,4 +1,6 @@
 module ApplicationHelper
+  include Pagy::Frontend
+
   def flash_class(flash)
     if flash.alert
       'alert-danger'
