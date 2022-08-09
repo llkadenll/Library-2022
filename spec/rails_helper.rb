@@ -8,6 +8,7 @@ require 'rspec/rails'
 # Add additional requires below this line. Rails is not loaded until this point!
 require_relative 'support/controller_macros'
 require_relative 'support/factory_bot'
+require 'capybara/rails'
 require 'devise'
 
 # Requires supporting ruby files with custom matchers and macros, etc, in
@@ -39,6 +40,7 @@ RSpec.configure do |config|
   config.include Devise::Test::ControllerHelpers, type: :view
   config.include Devise::Test::IntegrationHelpers, type: :request
   config.include Devise::Test::IntegrationHelpers, type: :view
+  config.include Warden::Test::Helpers
   config.extend ControllerMacros, type: :controller
 
   # Remove this line if you're not using ActiveRecord or ActiveRecord fixtures
