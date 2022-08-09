@@ -6,7 +6,7 @@ module RentsManager
     end
 
     def call
-      if @book.rents.last.ongoing?
+      if !@book.rents.empty? && @book.rents.last.ongoing?
         return false
       end
 
