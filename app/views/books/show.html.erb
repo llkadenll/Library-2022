@@ -3,7 +3,7 @@
     <div class="book-card-links">
       <%= rent_button(@book) %>
       <%= link_to "Edit this book", edit_book_path(@book) %>
-      <%= button_to "Delete this book", @book, method: :delete %>
+      <%= button_to "Delete this book", @book, method: :delete, class: "delete-button" %>
     </div>
 
     <p>

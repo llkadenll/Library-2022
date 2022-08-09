@@ -30,3 +30,10 @@
 .show-book {
   width: 70%;
 }
+
+.delete-button {
+  border: none;
+  background-color: inherit;
+  color: var(--bs-link-color);
+  text-decoration: underline;
+}
