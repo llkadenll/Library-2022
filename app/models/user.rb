@@ -1,5 +1,5 @@
 class User < ApplicationRecord
-  has_many :rents
+  has_many :rents, dependent: :destroy
   has_many :books, through: :rents
 
   # Include default devise modules. Others available are:
