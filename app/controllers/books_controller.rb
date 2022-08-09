@@ -4,7 +4,15 @@ class BooksController < ApplicationController
 
   # GET /books or /books.json
   def index
-    @pagy, @books = pagy(Book.all)
+    @pagy, @books = pagy( 
+      if params[:status] == 'available'
+        Book.where.not(id: Rent.where(status: 'ongoing').map { |r| r.book_id })
+      elsif params[:status] == 'rented'
+        Book.where(id: Rent.where(status: 'ongoing').map { |r| r.book_id })
+      else
+        Book.all
+      end
+    )
   end
 
   # GET /books/1 or /books/1.json

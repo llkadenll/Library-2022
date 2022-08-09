@@ -2,6 +2,13 @@
 
 <%= link_to "New book", new_book_path %>
 
+<p>Show only:
+<%= link_to "Available", books_path(status: 'available') %>
+<%= link_to "Rented", books_path(status: 'rented') %>
+<%= link_to "All", books_path() %>
+
+</p>
+
 <div id="books">
   <% @books.each do |book| %>
     <%= render book %>
