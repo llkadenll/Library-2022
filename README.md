@@ -32,6 +32,10 @@ Migrate the database:
 ```
 rails db:migrate
 ```
+Seed the database:
+```
+rails db:seed
+```
 Run the application:
 ```
 rails s
