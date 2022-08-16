@@ -5,7 +5,7 @@
 @import "devise";
 
 body {
-  background-color: #E7FFFE;
+  background-color: #F9F6F1;
   background-image: image-url('background-img');
   background-size: cover;
   background-repeat: no-repeat;
@@ -26,4 +26,8 @@ body {
 
 h1 {
   font-weight: 300;
+}
+
+.card-title {
+  color: #6C3E24;
 }
