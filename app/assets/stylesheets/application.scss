@@ -1,14 +1,29 @@
 @import "bootstrap";
+@import "navbar";
 @import "books";
 @import "rents";
+@import "devise";
+
+body {
+  background-color: #E7FFFE;
+  background-image: image-url('background-img');
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+}
 
 #main-container {
   width: 100%;
   display: flex;
   flex-direction: column;
   align-items: center;
+  margin-bottom: 10px;
 }
 
 .login-links {
   margin-right: 8px;
+}
+
+h1 {
+  font-weight: 300;
 }
