@@ -7,11 +7,12 @@ gem 'devise'
 gem 'bootstrap', '~> 5.2.0'
 gem 'pagy', '~> 5.10'
 
-group :development, :test do
+group :test do
   gem 'rspec-rails', '~> 5.0.0'
   gem 'factory_bot_rails'
   gem 'shoulda-matchers', '~> 5.0'
   gem 'capybara'
+  gem 'webdrivers'
 end
 
 # Bundle edge Rails instead: gem "rails", github: "rails/rails", branch: "main"

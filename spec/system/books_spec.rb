@@ -1,10 +1,11 @@
 require 'rails_helper'
 
-RSpec.feature "Books", type: :feature do
+RSpec.describe "Books", type: :system do
   let(:user) { create(:user) }
   let(:book) { create(:book) }
 
-  before(:each) do
+  before do
+    driven_by(:selenium_chrome_headless)
     login_as(user)
     visit book_path(book)
   end
