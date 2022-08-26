@@ -1,7 +1,14 @@
-
 # 📖 Library Project
 
-The project introduces library application which might be used by librarians and readers.
+The project introduces library application which might be used by librarians and readers. You can watch it live on [Heroku](https://safe-fjord-50129.herokuapp.com/). Most of the functions are available for registered users. To make it simpler you can use the following account: <br>
+
+Email: user@gmail.com <br>
+Password: qwerty
+
+## Screenshots
+<img src="screenshots/1.png">
+<img src="screenshots/2.png">
+<img src="screenshots/3.png">
 
 ## ✏️ Description
 
@@ -47,8 +54,3 @@ To run tests:
 ```
 rspec
 ```
-
-## Screenshots
-<img src="screenshots/1.png">
-<img src="screenshots/2.png">
-<img src="screenshots/3.png">
