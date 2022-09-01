@@ -1,4 +1,4 @@
-<div class="card book-card">
+<div class="card text-secondary bg-dark book-card">
 
   <div class="card-header">
     <%= book_status(book) %>
@@ -8,12 +8,11 @@
 
   <div class="card-body book-body">
     <div>
-      <h5 class="card-title book-title"><%= book.title %></h5>
+      <h5><%= link_to book.title, book, class: 'card-title book-title' %></h5>
       <p class="card-text"><%= book.author %></p>
     </div>
     <div class="book-card-links">
       <%= rent_button(book) %>
-      <%= link_to "Show", book, class: 'card-link' %>
     </div>
   </div>
 </div>

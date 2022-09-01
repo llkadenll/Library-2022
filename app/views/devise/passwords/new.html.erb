@@ -5,7 +5,7 @@
 
   <div class="login-fields">
     <div class="field">
-      <%= f.email_field :email, autofocus: true, autocomplete: "email", class: "form-control", size: "40", placeholder: "Email" %>
+      <%= f.email_field :email, autofocus: true, autocomplete: "email", class: "form-control bg-dark text-light", size: "40", placeholder: "Email" %>
     </div>
 
     <div class="actions">
@@ -13,7 +13,7 @@
     </div>
 
     <%- if controller_name != 'sessions' %>
-      <div class="alert alert-secondary">Recovered password? <%= link_to "Log in", new_session_path(resource_name) %>.</div>
+      <div class="alert login-info bg-dark text-white">Recovered password? <%= link_to "Log in", new_session_path(resource_name) %>.</div>
     <% end %>
   </div>
 <% end %>

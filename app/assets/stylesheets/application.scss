@@ -5,11 +5,12 @@
 @import "devise";
 
 body {
-  background-color: #F9F6F1;
+  background-color: #0D1117;
   background-image: image-url('background-img');
   background-size: cover;
   background-repeat: no-repeat;
   background-attachment: fixed;
+  color: #c6d0da;
 }
 
 #main-container {
@@ -25,5 +26,5 @@ h1 {
 }
 
 .card-title {
-  color: #6C3E24;
+  color: #c6d0da;
 }

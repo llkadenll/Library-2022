@@ -6,25 +6,25 @@
   <div class="login-fields">
     <div class="field">
       <% if resource.errors.messages_for(:email).any? %>
-        <%= f.email_field :email, autofocus: true, autocomplete: "email", class: "form-control is-invalid", size: "40", placeholder: "Email" %>
+        <%= f.email_field :email, autofocus: true, autocomplete: "email", class: "form-control bg-dark text-light is-invalid", size: "40", placeholder: "Email" %>
       <% else %>
-        <%= f.email_field :email, autofocus: true, autocomplete: "email", class: "form-control", size: "40", placeholder: "Email" %>
+        <%= f.email_field :email, autofocus: true, autocomplete: "email", class: "form-control bg-dark text-light", size: "40", placeholder: "Email" %>
       <% end %>
     </div>
 
     <div class="field">
       <% if resource.errors.messages_for(:email).any? %>
-        <%= f.password_field :password, autocomplete: "new-password", class: "form-control is-invalid", placeholder: "Password (#{@minimum_password_length} characters minimum)"%>
+        <%= f.password_field :password, autocomplete: "new-password", class: "form-control bg-dark text-light is-invalid", placeholder: "Password (#{@minimum_password_length} characters minimum)"%>
       <% else %>
-        <%= f.password_field :password, autocomplete: "new-password", class: "form-control", placeholder: "Password (#{@minimum_password_length} characters minimum)"%>
+        <%= f.password_field :password, autocomplete: "new-password", class: "form-control bg-dark text-light", placeholder: "Password (#{@minimum_password_length} characters minimum)"%>
       <% end %>
     </div>
 
     <div class="field">
       <% if resource.errors.messages_for(:password_confirmation).any? %>
-        <%= f.password_field :password_confirmation, autocomplete: "new-password", class: "form-control is-invalid", placeholder: "Password confirmation" %>
+        <%= f.password_field :password_confirmation, autocomplete: "new-password", class: "form-control bg-dark text-light is-invalid", placeholder: "Password confirmation" %>
       <% else %>
-        <%= f.password_field :password_confirmation, autocomplete: "new-password", class: "form-control", placeholder: "Password confirmation" %>
+        <%= f.password_field :password_confirmation, autocomplete: "new-password", class: "form-control bg-dark text-light", placeholder: "Password confirmation" %>
       <% end %>
     </div>
 
@@ -33,7 +33,7 @@
     </div>
 
     <% if controller_name != 'sessions' %>
-      <div class="alert alert-secondary">Already have an account? <%= link_to "Log in", new_session_path(resource_name) %>.</div>
+      <div class="alert login-info bg-dark text-white">Already have an account? <%= link_to "Log in", new_session_path(resource_name) %>.</div>
     <% end %>
 
   </div>

@@ -3,21 +3,21 @@
 <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
   <div class="login-fields">
     <div class="field">
-      <%= f.email_field :email, autofocus: true, autocomplete: "email", class: "form-control", size: "40", placeholder: "Email" %>
+      <%= f.email_field :email, autofocus: true, autocomplete: "email", class: "form-control bg-dark text-light", size: "40", placeholder: "Email" %>
     </div>
 
     <div class="field">
       <% if resource.errors.messages_for(:password).any? %>
-        <%= f.password_field :password, autocomplete: "current-password", class: "form-control is-invalid", placeholder: "Password" %>
+        <%= f.password_field :password, autocomplete: "current-password", class: "form-control bg-dark text-light is-invalid", placeholder: "Password" %>
       <% else %>
-        <%= f.password_field :password, autocomplete: "current-password", class: "form-control", placeholder: "Password" %>
+        <%= f.password_field :password, autocomplete: "current-password", class: "form-control bg-dark text-light", placeholder: "Password" %>
       <% end %>
     </div>
 
     <div class="field login-texts">
       <div>
         <% if devise_mapping.rememberable? %>
-          <%= f.check_box :remember_me, class: "form-check-input remember-me-checkbox" %>
+          <%= f.check_box :remember_me, class: "form-check-input bg-dark remember-me-checkbox" %>
           <%= f.label :remember_me, class: "form-check-label" %>
         <% end %>
       </div>
@@ -33,7 +33,7 @@
     </div>
 
     <% if devise_mapping.registerable? && controller_name != 'registrations' %>
-      <div class="alert alert-secondary">Don't have an account? <%= link_to "Sign up", new_registration_path(resource_name) %>.</div><br />
+      <div class="alert login-info bg-dark text-white">Don't have an account? <%= link_to "Sign up", new_registration_path(resource_name) %>.</div><br />
     <% end %>
   </div>
 <% end %>
