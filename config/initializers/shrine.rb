@@ -13,6 +13,12 @@ case Rails.env
       cache: Shrine::Storage::Memory.new,
       store: Shrine::Storage::Memory.new
     }
+  when 'production'
+    require "shrine/storage/file_system"
+    Shrine.storages = {
+      cache: Shrine::Storage::FileSystem.new("tmp", prefix: "uploads/cache"), # temporary
+      store: Shrine::Storage::FileSystem.new("tmp", prefix: "uploads"), # permanent
+    }
 end
 Shrine.plugin :activerecord           # loads Active Record integration
 Shrine.plugin :cached_attachment_data # enables retaining cached file across form redisplays
