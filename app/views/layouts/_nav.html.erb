@@ -5,7 +5,13 @@
   </ul>
   <div class="login-links">
     <% if current_user %>
-      <%= button_to 'Log out', destroy_user_session_path, class: 'dropdown-item', method: :delete %>
+      <div>
+        <%= current_user.email %>
+        <% if current_user.admin? %>
+          <span class="admin">(admin)</span>
+        <% end %>
+      </div>
+      <%= button_to 'Log out', destroy_user_session_path, class: 'btn btn-outline-primary btn-sm me-2', method: :delete %>
     <% else %>
       <%= link_to 'Log in', new_user_session_path, class: 'btn btn-outline-primary btn-sm me-2' %>
       <%= link_to 'Sign up', new_user_registration_path, class: 'btn btn-primary btn-sm' %>
