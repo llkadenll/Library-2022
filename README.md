@@ -1,18 +1,27 @@
 # 📖 Library Project
 
-The project introduces library application which might be used by librarians and readers. You can watch it live on [Heroku](https://safe-fjord-50129.herokuapp.com/). Most of the functions are available for registered users. To make it simpler you can use the following account: <br>
+## IN PROGRESS...
 
-Email: user@gmail.com <br>
+The project introduces library application which might be used by librarians and readers. You can watch it live on [Heroku](https://safe-fjord-50129.herokuapp.com/), HOWEVER there's a problem with displaying book covers which I cannot resolve yet. Most of the functions are available for registered users. To make it simpler you can use the following account: <br>
+
+Email: admin@gmail.com <br>
 Password: qwerty
 
 ## Screenshots
 <img src="screenshots/1.png">
+<hr>
 <img src="screenshots/2.png">
+<hr>
 <img src="screenshots/3.png">
 
 ## ✏️ Description
 
-Every user can glance through the list of books in the library. He can registrate and then log in to his account. Once it's done, a user can rent books but only these with 'available' status. Rented books are shown in their own tab, where users can return books. Users cannot get access to other users' rents. I added basic styling with Bootstrap to make the application look more transparent.
+- Every user can glance through the list of books in the library
+- He can registrate and then log in to his account
+- Once it's done, a user can rent books but only these with 'available' status
+- Rented books are shown in their own tab, where users can return books
+- Users cannot get access to other users' rents
+- There is a special admin/librarian role which allows to add, edit and delete books.
 
 ## 🛠 Tech Stack
 
@@ -29,6 +38,7 @@ Every user can glance through the list of books in the library. He can registrat
 - Shoulda-matchers
 - Factory Bot
 - Capybara
+- Shrine
 
 ### 🛠 Launching
 Install gems:
