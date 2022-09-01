@@ -1,5 +1,3 @@
-User.create(email: 'user@gmail.com', password: 'qwerty')
-
 hp_titles = [
   "Harry Potter and the Philosopher's Stone",
   "Harry Potter and the Chamber of Secrets",
@@ -28,6 +26,13 @@ Sed in turpis sit amet justo sodales facilisis non in turpis. Integer dapibus ma
 Nulla mattis lobortis turpis in mollis. Nunc non enim sit amet tellus varius pretium. 
 Morbi id lorem eu odio faucibus porttitor."
 
-hp_titles.each do |title|
-  Book.create(author: 'J. K. Rowling', title: title, description: hp_description)
+
+User.create(email: 'user@gmail.com', password: 'qwerty')
+
+uploader = ImageUploader.new(:store)
+
+7.times do |i|
+  file = File.new(Rails.root.join('app/assets/images/seed/hp'+(i+1).to_s+'.jpg'))
+  book_cover = uploader.upload(file)
+  Book.create(author: 'J. K. Rowling', title: hp_titles[i], description: hp_description, image_data: book_cover)
 end
