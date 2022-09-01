@@ -4,6 +4,8 @@
     <%= book_status(book) %>
   </div>
 
+  <%= image_tag book.image_url if book.image_url %>
+
   <div class="card-body book-body">
     <div>
       <h5 class="card-title book-title"><%= book.title %></h5>

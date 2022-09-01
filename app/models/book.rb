@@ -1,4 +1,6 @@
 class Book < ApplicationRecord
+  include ImageUploader::Attachment(:image)
+  
   has_many :rents, dependent: :destroy
   has_many :users, through: :rents
 
