@@ -2,6 +2,7 @@ require 'rails_helper'
 
 RSpec.describe "Books", type: :request do
   let(:user) { build(:user) }
+  let(:admin) { build(:admin) }
   let(:book) { create(:book) }
 
   let(:valid_params) { { book: { author: 'author', title: 'title' } } }
@@ -26,6 +27,14 @@ RSpec.describe "Books", type: :request do
       before { sign_in user }
       it "returns http success" do
         get new_book_url
+        expect(response).to redirect_to(root_path)
+      end
+    end
+
+    context "when admin signed in" do
+      before { sign_in admin }
+      it "returns http success" do
+        get new_book_url
         expect(response).to be_successful
       end
     end
@@ -43,13 +52,13 @@ RSpec.describe "Books", type: :request do
       before { sign_in user }
       it "returns http success" do
         get edit_book_url(book)
-        expect(response).to be_successful
+        expect(response).to redirect_to(root_path)
       end
     end
   end
 
   describe "POST /create" do
-    before { sign_in user }
+    before { sign_in admin }
 
     context "with valid parameters" do
       it "increments book count by 1" do
@@ -66,7 +75,7 @@ RSpec.describe "Books", type: :request do
   end
 
   describe "PATCH #update" do
-    before { sign_in user }
+    before { sign_in admin }
 
     context "with valid parameters" do
       it "redirects to book url" do
@@ -84,7 +93,7 @@ RSpec.describe "Books", type: :request do
   end
 
   describe "DELETE /destroy" do
-    before { sign_in user }
+    before { sign_in admin }
 
     it "redirects to books url" do
       delete book_url(book)

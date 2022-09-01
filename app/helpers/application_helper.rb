@@ -1,6 +1,10 @@
 module ApplicationHelper
   include Pagy::Frontend
 
+  def admin_signed_in?
+    current_user&.admin?
+  end
+
   def flash_class(flash)
     if flash.alert
       'alert-danger'

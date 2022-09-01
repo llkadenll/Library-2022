@@ -1,6 +1,8 @@
 <h1>Library</h1>
 
-<%= link_to "New book", new_book_path %>
+<% if admin_signed_in? %>
+  <%= link_to "New book", new_book_path %>
+<% end %>
 
 <p>
   Show only:

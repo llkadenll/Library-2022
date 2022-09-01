@@ -4,7 +4,7 @@
     <%= book_status(book) %>
   </div>
 
-  <%= image_tag book.image_url if book.image_url %>
+  <%= image_tag(book.image_url, alt: "book_cover") if book.image_url %>
 
   <div class="card-body book-body">
     <div>

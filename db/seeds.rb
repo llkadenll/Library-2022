@@ -27,6 +27,7 @@ Nulla mattis lobortis turpis in mollis. Nunc non enim sit amet tellus varius pre
 Morbi id lorem eu odio faucibus porttitor."
 
 
+User.create(email: 'admin@gmail.com', password: 'qwerty', role: :admin)
 User.create(email: 'user@gmail.com', password: 'qwerty')
 
 uploader = ImageUploader.new(:store)
