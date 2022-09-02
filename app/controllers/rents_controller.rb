@@ -2,7 +2,7 @@ class RentsController < ApplicationController
   before_action :authenticate_user!, only: %i[ index create ]
   before_action :set_rent, only: %i[ return ]
 
-  # GET /rents or /rents.json
+  # GET /rents
   def index
     @pagy, @rents = pagy(Rent.where(user: current_user).order(:status, updated_at: :desc))
   end
