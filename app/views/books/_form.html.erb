@@ -1,37 +1,33 @@
-<%= form_with(model: book) do |form| %>
-  <% if book.errors.any? %>
-    <div style="color: red">
-      <h2><%= pluralize(book.errors.count, "error") %> prohibited this book from being saved:</h2>
-
-      <ul>
-        <% book.errors.each do |error| %>
-          <li><%= error.full_message %></li>
-        <% end %>
-      </ul>
-    </div>
-  <% end %>
-
+<%= form_with(model: book, class: "book-form") do |form| %>
   <div>
-    <%= form.label :author, style: "display: block" %>
-    <%= form.text_field :author %>
+    <% if book.errors.messages_for(:author).any? %>
+      <%= form.text_field :author, size: "85x1", placeholder: book.errors.full_messages_for(:author).first, class: "form-control bg-dark text-white is-invalid" %>
+    <% else %>
+      <%= form.text_field :author, size: "85x1", placeholder: "Author", class: "form-control bg-dark text-white" %>
+    <% end %>
   </div>
 
   <div>
-    <%= form.label :title, style: "display: block" %>
-    <%= form.text_field :title %>
+    <% if book.errors.messages_for(:title).any? %>
+      <%= form.text_field :title, size: "85x1", placeholder: book.errors.full_messages_for(:title).first, class: "form-control bg-dark text-white is-invalid" %>
+    <% else %>
+      <%= form.text_field :title, size: "85x1", placeholder: "Title", class: "form-control bg-dark text-white" %>
+    <% end %>
   </div>
 
   <div>
-    <%= form.label :description, style: "display: block" %>
-    <%= form.text_area :description %>
+    <% if book.errors.messages_for(:description).any? %>
+      <%= form.text_area :description, size: "85x16", placeholder: book.errors.full_messages_for(:description).first, class: "form-control bg-dark text-white is-invalid" %>
+    <% else %>
+      <%= form.text_area :description, size: "85x16", placeholder: "Description", class: "form-control bg-dark text-white" %>
+    <% end %>
   </div>
 
   <div>
-    <%= form.label :image, value: book.cached_image_data, id: nil %>
-    <%= form.file_field :image %>
+    <%= form.file_field :image, class: "form-control bg-dark text-white" %>
   </div>
 
   <div>
-    <%= form.submit %>
+    <%= form.submit class: "btn btn-primary", style: "width:100%" %>
   </div>
 <% end %>

@@ -36,3 +36,13 @@
   color: var(--bs-link-color);
   text-decoration: underline;
 }
+
+.book-form {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.book-form > div > .form-control {
+  border: 1px solid grey;
+}
