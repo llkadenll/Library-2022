@@ -28,3 +28,11 @@ h1 {
 .card-title {
   color: #c6d0da;
 }
+
+.page-link,
+.page-link.disabled,
+.disabled > .page-link {
+  border-color: #212529;
+  background-color: #212529;
+  color: #6C757D;
+}

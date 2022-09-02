@@ -1,18 +1,14 @@
 <div class="card text-secondary bg-dark book-card">
 
-  <div class="card-header">
-    <%= book_status(book) %>
-  </div>
-
-  <%= image_tag(book.image_url, alt: "book_cover") if book.image_url %>
+  <%= image_tag(book.image_url, alt: "book cover", class: "card-img-top book-cover") if book.image_url %>
 
   <div class="card-body book-body">
-    <div>
       <h5><%= link_to book.title, book, class: 'card-title book-title' %></h5>
+    <div>
       <p class="card-text"><%= book.author %></p>
-    </div>
-    <div class="book-card-links">
-      <%= rent_button(book) %>
+      <div class="book-card-links">
+        <%= rent_button(book) %>
+      </div>
     </div>
   </div>
 </div>

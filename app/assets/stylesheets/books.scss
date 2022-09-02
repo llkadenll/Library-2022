@@ -3,23 +3,29 @@
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
-  gap: 15px;
+  gap: 18px;
   width: 70%;
 }
 
 .book-card {
-  width: 300px;
+  width: 230px;
 }
 
-.book-title {
-  margin-bottom: 2px;
-  text-decoration: none;
+.book-cover {
+  height: 322px;
+  object-fit: cover;
 }
 
 .book-body {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
+  text-align: center;
+}
+
+.book-title {
+  margin-bottom: 2px;
+  text-decoration: none;
 }
 
 .book-card-links {
