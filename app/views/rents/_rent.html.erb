@@ -7,6 +7,9 @@
       <h5 class="card-title"><%= link_to rent.book.title, rent.book, class: "book-title" %></h5>
       <p class="card-text"><%= rent.book.author %></p>
       <p class="card-text">Rented: <%= rent.created_at.to_date.to_fs(:rfc822) %></p>
+      <% if rent.ended_at %>
+        <p class="card-text">Returned: <%= rent.ended_at.to_date.to_fs(:rfc822) %></p>
+      <% end %>
     </div>
     <%= return_button(rent) %>
   </div>

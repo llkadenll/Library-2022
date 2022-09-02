@@ -10,6 +10,8 @@ module RentsManager
       end
       
       @rent.ended!
+      @rent.ended_at = Time.now
+      @rent.save
       return true
     end
 
