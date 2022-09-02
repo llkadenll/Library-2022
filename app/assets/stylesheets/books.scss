@@ -24,7 +24,6 @@
 }
 
 .book-title {
-  margin-bottom: 2px;
   text-decoration: none;
   font-size: 18px;
   color: #c6d0da;
@@ -35,22 +34,18 @@
 }
 
 .book-author {
-  margin: 0;
+  margin-bottom: 5px;
 }
 
-.book-card-links {
+.show-book-card-links {
   margin-top: 10px;
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
 }
 
 .rent-button {
   width: 100%;
-}
-
-.delete-button {
-  border: none;
-  background-color: inherit;
-  color: var(--bs-link-color);
-  text-decoration: underline;
 }
 
 .book-form {
@@ -61,4 +56,16 @@
 
 .book-form > div > .form-control {
   border: 1px solid grey;
+}
+
+.show-book {
+  display: flex;
+}
+
+.show-book-cover {
+  height: 400px;
+}
+
+.show-book-info {
+  margin-left: 16px;
 }

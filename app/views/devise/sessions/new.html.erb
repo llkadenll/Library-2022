@@ -33,7 +33,7 @@
     </div>
 
     <% if devise_mapping.registerable? && controller_name != 'registrations' %>
-      <div class="alert login-info bg-dark text-white">Don't have an account? <%= link_to "Sign up", new_registration_path(resource_name) %>.</div><br />
+      <div class="login-info bg-dark text-white">Don't have an account? <%= link_to "Sign up", new_registration_path(resource_name) %>.</div><br />
     <% end %>
   </div>
 <% end %>

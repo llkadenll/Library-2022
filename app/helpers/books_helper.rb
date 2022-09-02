@@ -8,7 +8,11 @@ module BooksHelper
   end
 
   def book_status(book)
-    book.rents.empty? || book.rents.last.ended? ? "available" : "rented"
+    if book.rents.empty? || book.rents.last.ended?
+      raw '<span class="text-success">available</span>'
+    else
+      raw '<span class="text-danger">rented</span>'
+    end
   end
 
 end

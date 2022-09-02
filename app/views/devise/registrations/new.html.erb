@@ -1,19 +1,18 @@
 <h1 class="login-header">Sign up</h1>
 
 <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
-  <%= render "devise/shared/error_messages", resource: resource %>
 
   <div class="login-fields">
     <div class="field">
       <% if resource.errors.messages_for(:email).any? %>
-        <%= f.email_field :email, autofocus: true, autocomplete: :off, class: "form-control bg-dark text-light is-invalid", size: "40", placeholder: "Email" %>
+        <%= f.email_field :email, autofocus: true, autocomplete: :off, class: "form-control bg-dark text-light is-invalid", size: "40", placeholder: resource.errors.full_messages_for(:email).first %>
       <% else %>
         <%= f.email_field :email, autofocus: true, autocomplete: :off, class: "form-control bg-dark text-light", size: "40", placeholder: "Email" %>
       <% end %>
     </div>
 
     <div class="field">
-      <% if resource.errors.messages_for(:email).any? %>
+      <% if resource.errors.messages_for(:password).any? %>
         <%= f.password_field :password, class: "form-control bg-dark text-light is-invalid", placeholder: "Password (#{@minimum_password_length} characters minimum)"%>
       <% else %>
         <%= f.password_field :password, class: "form-control bg-dark text-light", placeholder: "Password (#{@minimum_password_length} characters minimum)"%>
@@ -33,7 +32,7 @@
     </div>
 
     <% if controller_name != 'sessions' %>
-      <div class="alert login-info bg-dark text-white">Already have an account? <%= link_to "Log in", new_session_path(resource_name) %>.</div>
+      <div class="login-info bg-dark text-white">Already have an account? <%= link_to "Log in", new_session_path(resource_name) %>.</div>
     <% end %>
 
   </div>

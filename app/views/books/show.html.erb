@@ -1,31 +1,25 @@
 <div class="card text-white bg-dark show-book">
-  <div class="card-body">
-    <div class="book-card-links">
+  <div class="card-body show-book">
+    
+    <div>
+      <%= image_tag(@book.image_url, alt: "book cover", class: "show-book-cover") if @book.image_url %>
+      <div class="show-book-card-links">
       <%= rent_button(@book) %>
       <% if admin_signed_in? %>
-        <%= link_to "Edit this book", edit_book_path(@book) %>
-        <%= button_to "Delete this book", @book, method: :delete, class: "delete-button" %>
+        <%= link_to "Edit this book", edit_book_path(@book), class: "btn btn-success rent-button" %>
+        <%= button_to "Delete this book", @book, method: :delete, class: "btn btn-danger rent-button" %>
       <% end %>
     </div>
+    </div>
 
-    <p>
-      <strong>Author:</strong>
-      <%= @book.author %>
-    </p>
-
-    <p>
-      <strong>Title:</strong>
-      <%= @book.title %>
-    </p>
-
-    <p>
-      <strong>Status:</strong>
-      <%= book_status(@book) %>
-    </p>
-
-    <p>
-      <strong>Description:</strong>
-      <%= @book.description %>
-    </p>
+    <div class="show-book-info">
+      <h2><%= @book.title %></h2>
+      <h6 class="text-secondary"><%= @book.author %></h6>
+      <p>
+        <strong>Status:</strong>
+        <%= book_status(@book) %>
+      </p>
+        <%= @book.description %>
+    </div>
   </div>
 </div>

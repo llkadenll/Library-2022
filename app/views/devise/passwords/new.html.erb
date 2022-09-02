@@ -1,19 +1,23 @@
 <h1 class="login-header">Forgot your password?</h1>
 
 <%= form_for(resource, as: resource_name, url: password_path(resource_name), html: { method: :post }) do |f| %>
-  <%= render "devise/shared/error_messages", resource: resource %>
 
   <div class="login-fields">
     <div class="field">
-      <%= f.email_field :email, autofocus: true, autocomplete: :off, class: "form-control bg-dark text-light", size: "40", placeholder: "Email" %>
+      <% if resource.errors.messages_for(:email).any? %>
+        <%= f.email_field :email, autofocus: true, autocomplete: :off, class: "form-control bg-dark text-light is-invalid", size: "40", placeholder: resource.errors.full_messages_for(:email).first %>
+      <% else %>
+        <%= f.email_field :email, autofocus: true, autocomplete: :off, class: "form-control bg-dark text-light", size: "40", placeholder: "Email" %>
+      <% end %>
     </div>
 
-    <div class="actions">
-      <%= f.submit "Send me reset password instructions", class: "btn btn-primary" %>
-    </div>
+      <div class="actions">
+        <%= f.submit "Send me reset password instructions", class: "btn btn-primary" %>
+      </div>
 
-    <%- if controller_name != 'sessions' %>
-      <div class="alert login-info bg-dark text-white">Recovered password? <%= link_to "Log in", new_session_path(resource_name) %>.</div>
-    <% end %>
+      <%- if controller_name != 'sessions' %>
+        <div class="login-info bg-dark text-white">Recovered password? <%= link_to "Log in", new_session_path(resource_name) %>.</div>
+      <% end %>
+    </div>
   </div>
 <% end %>
