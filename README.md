@@ -8,11 +8,16 @@ Email: admin@gmail.com <br>
 Password: qwerty
 
 ## Screenshots
-<img src="screenshots/1.png">
+<img src="screenshots/1.png" width="70%">
 <hr>
-<img src="screenshots/2.png">
+<img src="screenshots/2.png" width="70%">
 <hr>
-<img src="screenshots/3.png">
+<img src="screenshots/3.png" width="70%">
+<hr>
+<img src="screenshots/4.png" width="70%">
+<hr>
+<img src="screenshots/5.png" width="70%">
+
 
 ## ✏️ Description
 
