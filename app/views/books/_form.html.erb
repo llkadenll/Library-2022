@@ -1,17 +1,17 @@
 <%= form_with(model: book, class: "book-form") do |form| %>
   <div>
     <% if book.errors.messages_for(:author).any? %>
-      <%= form.text_field :author, size: "85x1", placeholder: book.errors.full_messages_for(:author).first, class: "form-control bg-dark text-white is-invalid" %>
+      <%= form.text_field :author, size: "85x1", autocomplete: :off, placeholder: book.errors.full_messages_for(:author).first, class: "form-control bg-dark text-white is-invalid" %>
     <% else %>
-      <%= form.text_field :author, size: "85x1", placeholder: "Author", class: "form-control bg-dark text-white" %>
+      <%= form.text_field :author, size: "85x1", autocomplete: :off, placeholder: "Author", class: "form-control bg-dark text-white" %>
     <% end %>
   </div>
 
   <div>
     <% if book.errors.messages_for(:title).any? %>
-      <%= form.text_field :title, size: "85x1", placeholder: book.errors.full_messages_for(:title).first, class: "form-control bg-dark text-white is-invalid" %>
+      <%= form.text_field :title, size: "85x1", autocomplete: :off, placeholder: book.errors.full_messages_for(:title).first, class: "form-control bg-dark text-white is-invalid" %>
     <% else %>
-      <%= form.text_field :title, size: "85x1", placeholder: "Title", class: "form-control bg-dark text-white" %>
+      <%= form.text_field :title, size: "85x1", autocomplete: :off, placeholder: "Title", class: "form-control bg-dark text-white" %>
     <% end %>
   </div>
 
