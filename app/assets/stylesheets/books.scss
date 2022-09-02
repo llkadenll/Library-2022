@@ -21,11 +21,17 @@
   flex-direction: column;
   justify-content: space-between;
   text-align: center;
+  padding: 10px 14px 14px 14px;
 }
 
 .book-title {
   margin-bottom: 2px;
   text-decoration: none;
+  font-size: 18px;
+}
+
+.book-author {
+  margin: 0;
 }
 
 .book-card-links {
