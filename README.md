@@ -2,9 +2,14 @@
 
 ## IN PROGRESS...
 
-The project introduces library application which might be used by librarians and readers. You can watch it live on [Heroku](https://safe-fjord-50129.herokuapp.com/), HOWEVER there's a problem with displaying book covers which I cannot resolve yet. Most of the functions are available for registered users. To make it simpler you can use the following account: <br>
+The project introduces library application which might be used by librarians and readers. You can watch it live on [Heroku](https://safe-fjord-50129.herokuapp.com/), HOWEVER there's a problem with displaying book covers which I cannot resolve yet. Most of the functions are available for registered users. To make it simpler you can use the following accounts: <br>
 
+#### Librarian:
 Email: admin@gmail.com <br>
+Password: qwerty
+
+#### Reader:
+Email: user@gmail.com <br>
 Password: qwerty
 
 ## Screenshots
