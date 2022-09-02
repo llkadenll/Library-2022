@@ -1,7 +1,7 @@
 <div class="card text-white bg-dark show-book">
   <div class="card-body show-book">
     
-    <div>
+    <div class="show-book-side">
       <%= image_tag(@book.image_url, alt: "book cover", class: "show-book-cover") if @book.image_url %>
       <div class="show-book-card-links">
       <%= rent_button(@book) %>

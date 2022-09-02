@@ -1,13 +1,14 @@
-<div class="card text-white bg-dark rent-card">
+<div class="card text-secondary bg-dark rent-card">
 
-  <div class="card-header">
-    <%= rent.status %>
-  </div>
+  <%= image_tag(rent.book.image_url, alt: "book cover", class: "rent-book-cover") if rent.book.image_url %>
 
-  <div class="card-body">
-    <h5 class="card-title"><%= rent.book.title %></h5>
-    <p class="card-text"><%= rent.book.author %></p>
-    <%= button_to("Return this book", return_book_path(rent), method: :patch, class: 'btn btn-primary') if rent.ongoing? %>
+  <div class="card-body rent-card-body">
+    <div>
+      <h5 class="card-title"><%= link_to rent.book.title, rent.book, class: "book-title" %></h5>
+      <p class="card-text"><%= rent.book.author %></p>
+      <p class="card-text">Rented: <%= rent.created_at.to_date.to_fs(:rfc822) %></p>
+    </div>
+    <%= return_button(rent) %>
   </div>
 
 </div>
