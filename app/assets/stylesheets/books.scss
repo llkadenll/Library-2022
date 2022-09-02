@@ -67,7 +67,8 @@
 }
 
 .show-book-cover {
-  height: 400px;
+  width: 100%;
+  object-fit: cover;
 }
 
 .show-book-info {
