@@ -1,3 +1,10 @@
+def create_book(author, title, filename)
+  description = "Lorem"
+
+  book = Book.create(author: author, title: title, description: description)
+  book.cover.attach(io: File.open(Rails.root.join('app/assets/images/seed/', filename)), filename: filename)
+end
+
 hp_titles = [
   "Harry Potter and the Philosopher's Stone",
   "Harry Potter and the Chamber of Secrets",
@@ -8,34 +15,15 @@ hp_titles = [
   "Harry Potter and the Deathly Hallows"
 ]
 
-description = "Lorem ipsum dolor sit amet, consectetur adipiscing elit. 
-Sed luctus, sem a dignissim tempor, velit quam aliquet eros, et tincidunt enim massa ac sapien. 
-Donec condimentum pulvinar mauris non viverra. Suspendisse ac mi ut felis sagittis tempus. 
-Maecenas dignissim augue ac quam interdum, non posuere ipsum rhoncus. Nunc auctor facilisis lobortis. 
-Etiam tempus volutpat orci venenatis auctor. Sed sed mollis arcu. Integer vitae metus posuere, 
-consectetur turpis sit amet, suscipit turpis. Phasellus non nisl ipsum. 
-Vestibulum id elementum nibh, id congue massa. Aenean non imperdiet diam, at sollicitudin ipsum. 
-Aenean viverra elementum neque quis elementum. Mauris pellentesque metus lobortis tellus ornare aliquam. 
-Etiam sagittis id dui mattis vehicula. Aliquam egestas justo id lacus fermentum, at rutrum augue dapibus.\n\n
-Quisque et elit quis nisl molestie ultrices a sed tortor. Duis tempus maximus vulputate. 
-Mauris feugiat ipsum non faucibus porta. Morbi elementum scelerisque diam sagittis auctor. 
-Cras elit sem, tempus pellentesque condimentum non, ultrices tristique nibh. 
-Morbi eget est eget nisi placerat ullamcorper. Sed pellentesque sagittis velit, 
-sed hendrerit urna pulvinar ut. Aliquam blandit ante tellus, placerat molestie risus rutrum eu. 
-Sed in turpis sit amet justo sodales facilisis non in turpis. Integer dapibus magna in leo porttitor gravida. 
-Nulla mattis lobortis turpis in mollis. Nunc non enim sit amet tellus varius pretium. 
-Morbi id lorem eu odio faucibus porttitor."
-
-
 User.create(email: 'admin@gmail.com', password: 'qwerty', role: :admin)
 User.create(email: 'user@gmail.com', password: 'qwerty')
 
-Book.create(author: 'Stephen King', title: 'Fairy Tale', description: description)
-Book.create(author: 'Stephen King', title: "Billy Summers", description: description)
-Book.create(author: 'Yuval Noah Harari', title: "Sapiens. A Brief History of Humankind", description: description)
-Book.create(author: 'Michelle Obama', title: "Becoming", description: description)
-Book.create(author: 'Colleen Hoover', title: "Ugly Love", description: description)
+create_book('Stephen King', 'Fairy Tale', 'fairytale.jpeg')
+create_book('Stephen King', 'Billy Summers', 'billysummers.jpeg')
+create_book('Yuval Noah Harari', 'Sapiens. A Brief History of Humankind', 'sapiens.jpeg')
+create_book('Michelle Obama', "Becoming", 'becoming.jpeg')
+create_book('Colleen Hoover', "Ugly Love", 'uglylove.jpg')
 
 7.times do |i|
-  Book.create(author: 'J. K. Rowling', title: hp_titles[i], description: description)
+  create_book('J. K. Rowling', hp_titles[i], 'hp'+(i+1).to_s+'.jpg')
 end
