@@ -59,11 +59,15 @@
 }
 
 .show-book {
+  width: 100%;
+}
+
+.show-book-body {
   display: flex;
 }
 
 .show-book-side {
-  min-width: 30%;
+  width: 30%;
 }
 
 .show-book-cover {
@@ -72,5 +76,6 @@
 }
 
 .show-book-info {
+  width: 70%;
   margin-left: 16px;
 }
