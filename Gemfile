@@ -6,7 +6,6 @@ ruby "3.1.1"
 gem 'devise'
 gem 'bootstrap', '~> 5.2.0'
 gem 'pagy', '~> 5.10'
-gem 'shrine', '~> 3.4.0'
 
 group :test do
   gem 'rspec-rails', '~> 5.0.0'

@@ -1,7 +1,5 @@
 <div class="card text-secondary bg-dark book-card">
 
-  <%= image_tag(book.image_url, alt: "book cover", class: "card-img-top book-cover") if book.image_url %>
-
   <div class="card-body book-body">
       <h5><%= link_to book.title, book, class: 'card-title book-title' %></h5>
     <div>

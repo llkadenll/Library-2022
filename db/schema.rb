@@ -20,7 +20,6 @@ ActiveRecord::Schema[7.0].define(version: 2022_09_02_193845) do
     t.text "description"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.jsonb "image_data"
   end
 
   create_table "rents", force: :cascade do |t|

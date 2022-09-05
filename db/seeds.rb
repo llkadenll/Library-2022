@@ -30,30 +30,12 @@ Morbi id lorem eu odio faucibus porttitor."
 User.create(email: 'admin@gmail.com', password: 'qwerty', role: :admin)
 User.create(email: 'user@gmail.com', password: 'qwerty')
 
-uploader = ImageUploader.new(:store)
-
-file = File.new(Rails.root.join('app/assets/images/seed/fairytale.jpeg'))
-book_cover = uploader.upload(file)
-Book.create(author: 'Stephen King', title: 'Fairy Tale', description: description, image_data: book_cover)
-
-file = File.new(Rails.root.join('app/assets/images/seed/billysummers.jpeg'))
-book_cover = uploader.upload(file)
-Book.create(author: 'Stephen King', title: "Billy Summers", description: description, image_data: book_cover)
-
-file = File.new(Rails.root.join('app/assets/images/seed/sapiens.jpeg'))
-book_cover = uploader.upload(file)
-Book.create(author: 'Yuval Noah Harari', title: "Sapiens. A Brief History of Humankind", description: description, image_data: book_cover)
-
-file = File.new(Rails.root.join('app/assets/images/seed/becoming.jpeg'))
-book_cover = uploader.upload(file)
-Book.create(author: 'Michelle Obama', title: "Becoming", description: description, image_data: book_cover)
-
-file = File.new(Rails.root.join('app/assets/images/seed/uglylove.jpg'))
-book_cover = uploader.upload(file)
-Book.create(author: 'Colleen Hoover', title: "Ugly Love", description: description, image_data: book_cover)
+Book.create(author: 'Stephen King', title: 'Fairy Tale', description: description)
+Book.create(author: 'Stephen King', title: "Billy Summers", description: description)
+Book.create(author: 'Yuval Noah Harari', title: "Sapiens. A Brief History of Humankind", description: description)
+Book.create(author: 'Michelle Obama', title: "Becoming", description: description)
+Book.create(author: 'Colleen Hoover', title: "Ugly Love", description: description)
 
 7.times do |i|
-  file = File.new(Rails.root.join('app/assets/images/seed/hp'+(i+1).to_s+'.jpg'))
-  book_cover = uploader.upload(file)
-  Book.create(author: 'J. K. Rowling', title: hp_titles[i], description: description, image_data: book_cover)
+  Book.create(author: 'J. K. Rowling', title: hp_titles[i], description: description)
 end
