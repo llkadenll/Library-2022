@@ -1,7 +1,5 @@
 def create_book(author, title, filename)
-  description = "Lorem"
-
-  book = Book.create(author: author, title: title, description: description)
+  book = Book.create(author: author, title: title, description: Faker::Lorem.paragraph(sentence_count: 50))
   book.cover.attach(io: File.open(Rails.root.join('app/assets/images/seed/', filename)), filename: filename)
 end
 
