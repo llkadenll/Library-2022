@@ -1,5 +1,7 @@
 <div class="card text-secondary bg-dark rent-card">
 
+  <%= image_tag(rent.book.cover, alt: "book cover", class: "rent-book-cover") if rent.book.cover.attached? %>
+
   <div class="card-body rent-card-body">
     <div>
       <h5 class="card-title"><%= link_to rent.book.title, rent.book, class: "book-title" %></h5>

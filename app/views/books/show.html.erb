@@ -2,6 +2,7 @@
   <div class="card-body show-book">
     
     <div class="show-book-side">
+      <%= image_tag(@book.cover, alt: "book cover", class: "show-book-cover") if @book.cover.attached? %>
       <div class="show-book-card-links">
       <%= rent_button(@book) %>
       <% if admin_signed_in? %>

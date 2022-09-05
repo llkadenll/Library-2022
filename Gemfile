@@ -67,5 +67,6 @@ group :development do
   # gem "spring"
 end
 
+gem "google-cloud-storage", "~> 1.11", require: false
 
 gem "importmap-rails", "~> 1.1"
