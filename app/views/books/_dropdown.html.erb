@@ -1,0 +1,8 @@
+<div class="dropdown">
+  <button class="btn btn-outline-primary dropdown-toggle">Show only </button>
+  <div class="dropdown-content">
+    <%= link_to "Available", books_path(status: 'available'), class: "bg-dark text-white" %>
+    <%= link_to "Rented", books_path(status: 'rented'), class: "bg-dark text-white" %>
+    <%= link_to "All", books_path(), class: "bg-dark text-white" %>
+  </div>
+</div>
