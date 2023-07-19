@@ -68,6 +68,10 @@ group :development do
   # gem "spring"
 end
 
-gem "google-cloud-storage", "~> 1.11", require: false
+gem "google-cloud-storage", "~> 1.44", require: false
 
 gem "importmap-rails", "~> 1.1"
+
+gem "dockerfile-rails", ">= 1.5", :group => :development
+
+gem "redis", "~> 5.0"
